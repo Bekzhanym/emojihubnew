@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+Emoji Hub
+Emoji Hub — это веб-приложение, которое позволяет пользователям просматривать, искать и использовать эмодзи. Приложение предоставляет пользователю интерфейс для поиска эмодзи по имени, категорию и отображает описание каждого эмодзи.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Краткое описание проекта
+Emoji Hub — это веб-приложение, которое взаимодействует с внешним API для получения данных о эмодзи и отображает их в удобном интерфейсе. Пользователи могут искать эмодзи, фильтровать их по категориям и сортировать по алфавиту. Приложение также позволяет добавить эмодзи в избранное и отображать подробную информацию о каждом эмодзи.
 
-## Available Scripts
+Инструкции по установке и запуску
+1. Клонирование репозитория
+Склонируйте репозиторий на ваш локальный компьютер:
 
-In the project directory, you can run:
+git clone https://github.com/ваш-репозиторий.git
 
-### `npm start`
+2. Установка зависимостей
+Перейдите в директорию проекта и установите все необходимые зависимости:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+cd client npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+cd server npm install
 
-### `npm test`
+3. Запуск сервера
+Запустите сервер, чтобы он начал слушать запросы:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+cd server npm start
 
-### `npm run build`
+4. Запуск клиентской части
+Перейдите в клиентскую часть и запустите React-приложение:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+cd client npm start
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Теперь приложение будет доступно по адресу http://localhost:3000.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Описание процесса проектирования и разработки
+Процесс разработки включал в себя несколько этапов:
 
-### `npm run eject`
+Проектирование структуры приложения: Было решено разделить приложение на серверную и клиентскую части. Сервер работает с API, а клиентская часть отвечает за отображение данных и взаимодействие с пользователем.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Использование API: Для получения данных об эмодзи был выбран API EmojiHub, который предоставляет подробную информацию о каждом эмодзи. Сервер обрабатывает запросы и передает данные на клиентскую часть.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Реализация интерфейса: Интерфейс был реализован с использованием React и простых компонентов для отображения эмодзи, поиска и фильтрации.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Уникальные подходы и методологии
+Использование собственного сервиса для работы с внешним API: Серверная часть приложения работает с API для получения данных о эмодзи, что позволяет изолировать клиентскую часть от прямого взаимодействия с внешними сервисами.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Динамическое обновление данных: Использование React хуков useState и useEffect позволяет динамически обновлять данные, когда пользователь выполняет поиск или сортирует эмодзи.
 
-## Learn More
+Компромиссы, принятые во время разработки
+Отсутствие продвинутого кеширования: Для упрощения разработки не было добавлено сложное кеширование данных. Это могло бы повысить производительность, но в текущей реализации эмодзи загружаются по мере необходимости.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ограниченная стилизация: Интерфейс приложения прост, без сложных анимаций или эффектов, чтобы сосредоточиться на функциональности.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Известные ошибки или проблемы
+В приложении могут быть небольшие задержки при загрузке эмодзи из-за асинхронных запросов.
 
-### Code Splitting
+В некоторых случаях могут возникать проблемы с отображением некоторых эмодзи, если API возвращает некорректные данные.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Технический стек
+Frontend: React, Axios, CSS
 
-### Analyzing the Bundle Size
+Backend: Express.js
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+API: EmojiHub API
 
-### Making a Progressive Web App
+Хостинг: Приложение развернуто на Vercel для публичного доступа.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Видео-демо
+Запишите короткое видео-демо с обзором вашего проекта, где вы перечислите все вышеуказанные пункты. Видео можно записать с помощью любых доступных инструментов, таких как Loom, OBS Studio или Zoom.
 
-### Advanced Configuration
+Лицензия
+Этот проект распространяется под лицензией MIT.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
