@@ -1,38 +1,148 @@
-.App {
+/* Основной стиль body */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Светлая тема */   
+.light-theme {
+  background-color: #ffffff;
+  color: #222;
+}
+
+/* Темная тема */
+.dark-theme {
+  background-color: #1e1e1e;
+  color: #f5f5f5;
+}
+
+/* Основной контейнер приложения */
+.app {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  padding: 40px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+/* Кнопка для переключения темы */
+.toggle-button {
+  background: none;
+  border: 2px solid currentColor;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: 0.3s;
+  color: #fff;
+  background-color: #333;
+}
+
+.toggle-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Стили для заголовков */
+h1 {
+  font-size: 36px;
+  color: inherit;
+}
+
+h2 {
+  font-size: 24px;
+  color: inherit;
+  margin-top: 10px;
+}
+
+p {
+  font-size: 18px;
+  color: inherit;
+  margin-top: 10px;
+}
+
+/* Стили для эмодзи-пикера */
+.emoji-picker-react {
+  margin-top: 30px;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для текста выбранного эмодзи */
+.selected-emoji {
+  font-size: 24px;
+  margin-top: 20px;
+  color: inherit;
+}
+
+/* Стили для корзины */
+.cart-container {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cart-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  background-color: #e0e0e0;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 24px;
+  position: relative;
+}
+
+.cart-item button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+/* Стиль для чата в темной теме */
+.dark-theme .cart-container {
+  background-color: #333;
+}
+
+.dark-theme .cart-item {
+  background-color: #444;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Стили для социальных кнопок */
+.social-buttons a {
+  margin: 0 10px;
+  color: inherit; /* Наследуем цвет, чтобы иконки соответствовали теме */
+  transition: transform 0.3s ease, color 0.3s ease; /* Плавный переход */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.social-buttons a:hover {
+  color: #007bff; /* Цвет для активных иконок (например, синий) */
+  transform: scale(1.1); /* Увеличиваем иконки на 10% при наведении */
 }
+
+/* Добавляем дополнительное выделение для тёмной темы */
+.dark-theme .social-buttons a:hover {
+  color: #ff8c00; /* Оранжевый цвет для тёмной темы */
+}
+
