@@ -31,10 +31,6 @@ git clone https://github.com/Bekzhanym/emojihubnew
 
 Перейдите в директорию проекта и установите зависимости:
 
-```bash
-cd client
-npm install
-```
 
 ```bash
 cd server
