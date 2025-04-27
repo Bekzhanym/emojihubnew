@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import EmojiPicker from "emoji-picker-react";
 import { ToastContainer, toast } from "react-toastify";
-import { FaGithub, FaInstagram,FaLinkedin  } from "react-icons/fa";
- // Импортируем иконки
+import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa"; // Иконки соцсетей
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
@@ -11,6 +11,20 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [cart, setCart] = useState([]); // Корзина с выбранными эмодзи
   const [lastClickedEmoji, setLastClickedEmoji] = useState(null); // Для отслеживания последнего выбранного эмодзи
+  const [emojis, setEmojis] = useState([]); // Для хранения списка эмодзи из API
+
+  // Загрузка эмодзи с API
+  useEffect(() => {
+    axios
+      .get("https://emojihub.yurace.pro/api/all") // url от репо
+      .then((response) => {
+        setEmojis(response.data); // Сохраняем эмодзи в состояние
+      })
+      .catch((error) => {
+        console.error("Ошибка при загрузке эмодзи:", error);
+        toast.error("Не удалось загрузить эмодзи");
+      });
+  }, []);
 
   const onEmojiClick = (emojiData) => {
     const emoji = emojiData.emoji;
@@ -95,7 +109,11 @@ function App() {
 
       <div className="emoji-picker-container">
         <p>Выберите эмодзи:</p>
-        <EmojiPicker onEmojiClick={onEmojiClick} />
+        {/* Используем эмодзи из состояния */}
+        <EmojiPicker 
+          emojis={emojis} 
+          onEmojiClick={onEmojiClick} 
+        />
       </div>
 
       {selectedEmoji && (
