@@ -41,16 +41,7 @@ npm install
 npm install react react-dom emoji-picker-react react-toastify react-icons
 ```
 
-### 3. Запуск сервера
-
-Запустите сервер:
-
-```bash
-cd server
-npm start
-```
-
-### 4. Запуск клиентской части
+### 3. Запуск клиентской части
 
 Перейдите в директорию клиента и запустите приложение:
 
