@@ -33,7 +33,6 @@ git clone https://github.com/Bekzhanym/emojihubnew
 
 
 ```bash
-cd server
 npm install
 ```
 
@@ -41,14 +40,6 @@ npm install
 npm install react react-dom emoji-picker-react react-toastify react-icons
 ```
 
-### 3. Запуск клиентской части
-
-Перейдите в директорию клиента и запустите приложение:
-
-```bash
-cd client
-npm start
-```
 
 Теперь приложение будет доступно по адресу:
 
